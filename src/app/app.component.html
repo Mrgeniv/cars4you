@@ -1,0 +1,66 @@
+<header>
+  <div class="logo_container">
+    <h1><a routerLink="/"><span>Cars</span> <strong style="color: #1adcc4">4You</strong></a></h1>
+  </div>
+  <nav>
+    <ul>
+      <li><a routerLink="/" class="active">Home</a></li>
+      <li><a routerLink="/uberuns" class="active">Über uns</a></li>
+      <li><a routerLink="/kontakt" class="active">Kontakt</a></li>
+
+      <li *ngIf="loggedIn">
+        <a routerLink="/dashboard" class="active">Dashboard</a>
+      </li>
+
+      <li>
+        <a routerLink="/anmelden" class="active"
+          ><button class="btn outline">Anmelden</button></a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+  <div class="container-footer">
+    <div class="row">
+      <div class="footer-col">
+        <h4>Unternehmen</h4>
+        <ul>
+          <li><a href="#">Über uns</a></li>
+          <li><a href="#">Unser Service</a></li>
+          <li><a href="#">Impressum</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hilfe</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping</a></li>
+          <li><a href="#">Returns</a></li>
+          <li><a href="#">Order Status</a></li>
+          <li><a href="#">Bezahloptionen</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Online Shop</h4>
+        <ul>
+          <li><a href="#">Autos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Folge Uns</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

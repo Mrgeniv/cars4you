@@ -1,0 +1,25 @@
+<h1>Kontaktformular</h1>
+
+<form>
+  <label>
+    Name:
+    <input type="text" name="name" [(ngModel)]="name">
+  </label>
+
+  <label>
+    Vorname:
+    <input type="text " name="vorname " [(ngModel)]="vorname">
+  </label>
+
+  <label>
+    E-Mail:
+    <input type="email" name="email" [(ngModel)]="email">
+  </label>
+
+  <label>
+    Nachricht:
+    <textarea name="message" [(ngModel)]="message"></textarea>
+  </label>
+
+  <button (click)="submitForm()">Senden</button>
+</form>

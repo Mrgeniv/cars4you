@@ -1,0 +1,11 @@
+<!-- <div class="filter-wrapper">
+  <app-filter-modal></app-filter-modal>
+  Wir haben versucht eine Filterbar zu implementieren doch das gefilterte neue carArray wurde vom carService.ts nicht bei der homeComponent nicht aktualisiert 
+</div> -->  
+
+
+<div class="cards-wrapper">
+  <ng-container *ngFor="let car of carsArray">
+    <app-car-card [car]="car"></app-car-card>
+  </ng-container>
+</div>

@@ -1,0 +1,182 @@
+<div class="container d-flex justify-content-center border-1 rounded">
+        <div class="container">
+            <div class="row m-0">
+                <div class="col-lg-12 pb-5 pe-lg-5">
+                    <div class="row col-12">
+                        <div class="col-12 p-5">
+                            <img src="{{currentCar.image}}"alt="{{currentCar.id}}">
+                        </div>
+                        <h1 class="col-12 text-white">{{ currentCar.details.brand }} {{ currentCar.details.series }} {{ currentCar.details.variant }} {{ currentCar.details.modifications }} {{ currentCar.details.model }}</h1>
+                        <div class="row m-0 bg-dark col-12">
+                            <div class="col-md-4 col-6 ps-30 pe-0 my-4">
+                                <p class="text-white">Zulassungsdatum</p>
+                                <p class="h5 text-white">{{currentCar.details.yearOfConstruction }}<span class="ps-1"></span></p>
+                            </div>
+                            <div class="col-md-4 col-6  ps-30 my-4">
+                                <p class="text-white">Transmission</p>
+                                <p class="h5 m-0 text-white">{{currentCar.details.transmissionType }}</p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-white">Tankart</p>
+                                <p class="h5 m-0 text-white">{{currentCar.details.fuelType}}</p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-white">PS</p>
+                                <p class="h5 m-0 text-white">{{currentCar.details.horsePower}}</p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-white">Verbrauch l/100km:</p>
+                                <p class="h5 m-0 text-white">{{currentCar.details.fuelConsumptionRateInLiter}}</p>
+                            </div>
+                            <div class="col-md-4 col-6 ps-30 my-4">
+                                <p class="text-white">Abholung/Abgabe- Ort:</p>
+                                <p class="h5 m-0 text-white">{{currentCar.details.placeOfRental}}</p>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="col-md-8 order-md-1 text-white border-1 rounded bg-dark p-5">
+            <h4 class="mb-3 ">Rechnungsadresse</h4>
+            <form class="needs-validation mb-4" novalidate="">
+                <div class="row">
+                    <div class="col-md-6 mb-3 ">
+                        <label for="firstName">Vorname</label>
+                        <input name="firstName" type="text" class="form-control" id="firstName" placeholder="Vorname"  [(ngModel)]="firstName" required="">
+                        <div class="invalid-feedback"> Ein gültiger Nachname ist erforderlich. </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Nachname</label>
+                        <input name="lastName" type="text" class="form-control" id="lastName" placeholder="Nachname"  [(ngModel)]="lastName" required="">
+                        <div class="invalid-feedback"> Ein gültiger Nachname ist erforderlich. </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="username">Benutzername</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input name="username" type="text" class="form-control" id="username" placeholder="Benutzername" [(ngModel)]="username" required="">
+                        <div class="invalid-feedback" style="width: 100%;"> Ihr Benutzername ist erforderlich. </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="you@example.com" [(ngModel)]="email">
+                    <div class="invalid-feedback"> Bitte geben Sie eine gültige E-Mail-Adresse für Versandaktualisierungen ein. </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address">Adresse</label>
+                    <input name="adress" type="text" class="form-control" id="address" placeholder="1234 Main St" [(ngModel)]="adress" required="">
+                    <div class="invalid-feedback"> Bitte geben Sie Ihre Lieferadresse ein. </div>
+                </div>
+                <div class="mb-3">
+                    <label for="address2">Adresse 2 <span class="text-muted">(Optional)</span></label>
+                    <input name="adress2"type="text" class="form-control" id="address2" placeholder="Apartment oder Suite" [(ngModel)]="adress2">
+                </div>
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Land</label>
+                        <select class="custom-select d-block w-100" id="country" (change)="handleCountryChange($event)" required="">
+                            <option value="">Wählen...</option>
+                            <option>Deutschland</option>
+                        </select>
+                        <div class="invalid-feedback"> Bitte wählen Sie ein gültiges Land aus. </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="state">Bundesland</label>
+                        <select class="custom-select d-block w-100" id="state" (change)="handleStateChange($event)" required="">
+                            <option value="">Wählen...</option>
+                            <option>Baden-Württemberg</option>
+                            <option>Bayern</option>
+                            <option>Berlin</option>
+                            <option>Brandenburg</option>
+                            <option>Bremen</option>
+                            <option>Hamburg</option>
+                            <option>Hessen</option>
+                            <option>Mecklenburg-Vorpommern</option>
+                            <option>Niedersachen</option>
+                            <option>Nordrhein-Westfahlen</option>
+                            <option>Rheinland-Pfalz</option>
+                            <option>Saarland</option>
+                            <option>Sachsen</option>
+                            <option>Sachsen-Anhalt</option>
+                            <option>Schleswig-Holstein</option>
+                            <option>Thüringen</option>
+                        </select>
+                        <div class="invalid-feedback"> Bitte wählen Sie ein gültiges Land aus. </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="plz">Postleitzahl</label>
+                        <input name="plz"type="text" class="form-control" id="plz" placeholder="" [(ngModel)]="plz" required="">
+                        <div class="invalid-feedback"> Postleitzahl erforderlich. </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="same-address">
+                    <label class="custom-control-label" for="same-address">Lieferadresse ist die gleiche wie meine Rechnungsadresse</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="save-info">
+                    <label class="custom-control-label" for="save-info">Speichern Sie diese Informationen für das nächste Mal</label>
+                </div>
+                <hr class="mb-4">
+                <h4 class="mb-3">Zahlung</h4>
+                <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                        <label class="custom-control-label" for="credit">Kreditkarte</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                        <label class="custom-control-label" for="debit">Debitkarte</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-name">Name auf der Karte</label>
+                        <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                        <small class="text-muted">Vollständiger Name wie auf der Karte angegeben</small>
+                        <div class="invalid-feedback"> Name auf der Karte ist erforderlich </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="cc-number">Kreditkartennummer</label>
+                        <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                        <div class="invalid-feedback"> Kreditkartennummer ist erforderlich </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-expiration">Ablauf</label>
+                        <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                        <div class="invalid-feedback"> Ablaufdatum erforderlich </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="cc-cvv">CVV</label>
+                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                        <div class="invalid-feedback"> Sicherheitscode erforderlich </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="button" (click)="loadPdf()">Zur PDF</button>
+                <iframe id="pdfViewer" [src]="pdfSrc"></iframe>
+                <hr class="mb-4">
+                
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Buchen</button>
+            </form>
+        </div>
+</div>

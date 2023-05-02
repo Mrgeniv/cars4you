@@ -1,0 +1,57 @@
+<div class="image-container">
+  <img src="{{ car.image }}" alt="{{ car.id }}" />
+</div>
+<div class="car-content">
+  <div class="car-title">
+    <h3 class="car-name">{{ car.details.brand }} {{ car.details.series }} {{ car.details.variant }} {{ car.details.modifications }} {{ car.details.model }}</h3>
+    <data class="car-year">{{ car.details.yearOfConstruction }}</data>
+  </div>
+  <ul class="card-list">
+    <li class="card-list-item" id="group">
+      <span class="material-symbols-outlined">group</span>
+      <span class="card-item-text">{{ car.details.seatsAmount }}</span>
+    </li>
+    <li class="card-list-item" id="tank">
+      <span class="material-symbols-outlined"> local_gas_station </span>
+      <span class="card-item-text">{{ car.details.fuelType }}</span>
+    </li>
+    <li class="card-list-item" id="consumption">
+      <span class="material-symbols-outlined"> speed </span>
+      <span class="card-item-text">{{ car.details.fuelConsumptionRateInLiter }} l/100km </span>
+    </li>
+    <li class="card-list-item" id="hardware">
+      <span class="material-symbols-outlined"> memory </span>
+      <span class="card-item-text">{{ car.details.transmissionType }}</span>
+    </li>
+  </ul>
+</div>
+<div class="car-price-wrapper">
+  <p class="card-price"><strong>{{car.details.price}} €</strong> <span>/ Tag</span></p>
+  <div class="button-wrapper">
+    <div class="box">
+      <label for="popup-toggle-{{ car.id }}" class="btn outline">{{'details' | uppercase}}</label>
+    </div>
+    <input type="checkbox" id="popup-toggle-{{ car.id }}" class="overlay-checkbox">
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h2>Details</h2>
+        <label for="popup-toggle-{{ car.id }}" class="close">&times;</label>
+        <div class="content">
+          <ul>
+            <li class="car-title"><span>{{ car.details.brand }} {{ car.details.series }} {{ car.details.variant }} {{ car.details.modifications }} {{ car.details.model }}</span></li>
+            <li><strong>Zulassungsdatum:</strong> <span>{{ car.details.yearOfConstruction }}</span></li>
+            <li><strong>Tankart:</strong> <span>{{ car.details.fuelType }}</span></li>
+            <li><strong>Verbrauch l/100km:</strong> <span>{{ car.details.fuelConsumptionRateInLiter }} Liter</span> </li>
+            <li><strong>Getriebe:</strong> <span>{{ car.details.transmissionType }}</span></li>
+            <li><strong>PS:</strong> <span>{{ car.details.horsePower  }}</span></li>
+            <li><strong>Mietpreis:</strong> <span>{{ car.details.price }}€</span></li>
+            <li><strong>Anzahl Sitze:</strong> <span>{{ car.details.seatsAmount }}</span></li>
+            <li><strong>Ort:</strong> <span>{{ car.details.placeOfRental }}</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <button [routerLink]="['/checkout',car.id]" class="btn fill">JETZT MIETEN</button>
+  </div>
+</div>

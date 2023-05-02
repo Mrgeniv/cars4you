@@ -1,0 +1,27 @@
+<div class="brands-wrapper">
+  
+    <label for="#brands">Marken
+      <select (change)="handleSelectChangeForBrand($event)" name="" id="brands">
+        <option *ngFor="let brand of carBrands">{{ brand }}</option>
+      </select>
+    </label>
+  
+    <label for="#model">Serien
+      <select (change)="handleSelectChangeForSeries($event)" [disabled]="!selectedCarBrand || selectedCarBrand === 'Beliebig'" id="modal">
+        <option>Beliebig</option>
+        <option *ngFor="let series of carSeriesBasedOnSelectedBrand">{{ series.seriesId }}</option>
+      </select>
+    </label>
+  
+    <label for="#variants">Varianten
+      <select [disabled]="!selectedCarSeries || selectedCarSeries === 'Beliebig' || carVariantsBasedOnSelectedSeries.length === 0" id="modal">
+        <option>Beliebig</option>
+        <option *ngFor="let variants of carVariantsBasedOnSelectedSeries">{{ variants }}</option>
+      </select>
+    </label>
+
+    <button (click)="filterCarList()">Filtern</button>
+  </div>
+<!-- <div *ngIf="!brandFilter" class="models-wrapper">models</div> -->
+<!-- *ngIf="selectedCarBrand && selectedCarBrand == 'Beliebig' -->
+<!-- *ngIf="selectedCarSeries && carVariantsBasedOnSelectedSeries.length"  -->

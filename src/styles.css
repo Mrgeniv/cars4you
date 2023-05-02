@@ -1,0 +1,28 @@
+/* Add application styles & imports to this file! */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif;
+
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(
+          90deg,
+          rgba(31, 36, 44, 1) 0%,
+          rgba(57, 67, 82, 1) 28%,
+          rgba(3, 4, 5, 1) 100%
+  );
+
+}

@@ -1,0 +1,66 @@
+:host{
+display: flex;
+width: 100%;
+justify-content: center;
+height: 100%;
+align-items: center;
+}
+
+table{
+  justify-content: center;
+  max-width: 90%;
+  width: 100%;
+  max-height: 550px;
+  height: 100%;
+ 
+  padding: 20px;
+  
+}
+table thead th{
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(208, 211, 216, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+  border-radius: 5px;
+
+}
+table thead tr{
+  
+  justify-content: center;
+}
+
+table tbody{
+  text-align: center;
+}
+
+table tbody td{
+  margin: 10px 0 10px 0;
+  border: none;
+  
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(208, 211, 216, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+  border-radius: 5px;
+  
+}
+
+table tbody tr button{
+  margin: 0 0 0 0;
+  background-color: #da4d4d;
+  border: none;
+  border-radius: 5px;
+  margin: 0px 0 0px 0; 
+  width: 50px;
+  height: 50px;
+}
+table tbody tr button:hover{
+  cursor: pointer;
+  background-color: rgb(121, 58, 58);
+}
+
+table tbody tr td img{
+  width: 50px;
+}

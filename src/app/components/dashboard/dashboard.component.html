@@ -1,0 +1,43 @@
+<table>
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Bild</th>
+        <th scope="col">Bezeichnung</th>
+        <th scope="col">Zulassungsdatum</th>
+        <th scope="col">Tankart</th>
+        <th scope="col">Verbrauch l/100km</th>
+        <th scope="col">Getriebe</th>
+        <th scope="col">PS</th>
+        <th scope="col">Mietpreis</th>
+        <th scope="col">Anzahl Sitze</th>
+        <th scope="col">Abholung/Rückgabe</th>
+      </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let car of cars">
+      <tr>
+        <td>{{car.id}}</td>
+        <td><img src="{{ car.image }}" alt=""></td>
+        <td>{{ car.details.brand }} {{ car.details.series }} {{ car.details.variant }} {{ car.details.modifications }} {{ car.details.model }}</td>
+        <td>{{ car.details.yearOfConstruction | date:'dd.MM.yyyy' }}</td>
+        <td>{{ car.details.fuelType }}</td>
+        <td>{{ car.details.fuelConsumptionRateInLiter }} l/100km</td>
+        <td>{{ car.details.transmissionType }}</td>
+        <td>{{ car.details.horsePower }} PS</td>
+        <td>{{ car.details.price }}€</td>
+        <td>{{ car.details.seatsAmount }}</td>
+        <td>{{ car.details.placeOfRental }}</td>
+        <button class="material-symbols-rounded" type="button" (click)="deleteCar(car)">delete_forever</button>
+      </tr>
+    </ng-container>
+
+
+    
+    
+
+
+    </tbody>
+  </table>
+
+
